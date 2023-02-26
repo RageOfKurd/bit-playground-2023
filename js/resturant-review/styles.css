@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+}
+
+.resturant {
+  width: 75%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr 1fr; */
+  grid-template-areas:
+    "header header header"
+    "details location rating"
+    "reviews reviews reviews ";
+}
+
+.header {
+  grid-row: header;
+  grid-column: header;
+}
+
+.reviews {
+  grid-row: reviews;
+  grid-column: reviews;
+  padding: 100px 0;
+}
+
+.header img {
+  width: 100%;
+  border-radius: 2rem;
+}
+
+.checked {
+  color: aquamarine;
+}
+
+.review {
+  background-color: aliceblue;
+  padding: 1rem;
+  border-radius: 2rem;
+  margin: 1rem 0;
+  display: flex;
+}
+
+.review img {
+  width: 80px;
+  object-fit: contain;
+  margin-right: 1rem;
+}

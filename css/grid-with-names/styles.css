@@ -1,0 +1,151 @@
+@font-face {
+  font-family: westworld;
+  src: url(fonts/PresicavW00Bold.ttf);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  background-color: black;
+  color: white;
+  font-family: "westworld", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 1rem;
+}
+
+nav a:hover {
+  background-color: white;
+  color: black;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 800px 500px 300px;
+  grid-template-areas:
+    "header header header header"
+    "about about experience experience"
+    "card card card card";
+}
+
+.header {
+  grid-row: header;
+  grid-column: header;
+  background-image: url("images/background.jpg");
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-text {
+  width: 40vw;
+  height: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  border: 5px white solid;
+}
+
+.header-text h1 {
+  font-size: 4rem;
+}
+
+.about {
+  grid-row: about;
+  grid-column: about;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("images/about-background.png");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  padding: 2rem;
+}
+
+.experience {
+  grid-row: experience;
+  grid-column: experience;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("images/experience-background.png");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  padding: 2rem;
+  direction: rtl;
+}
+
+.card1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("images/cast1.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding: 1rem;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  text-align: center;
+}
+
+.card2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("images/cast2.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding: 1rem;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  text-align: center;
+}
+
+.card3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("images/cast3.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding: 1rem;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  text-align: center;
+}
+
+.card4 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("images/cast4.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding: 1rem;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}

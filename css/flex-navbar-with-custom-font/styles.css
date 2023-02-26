@@ -1,0 +1,94 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(fonts/Montserrat-Regular.ttf);
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(fonts/Montserrat-Italic.ttf);
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(fonts/Montserrat-Bold.ttf);
+  font-style: normal;
+  font-weight: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2 {
+  margin: 0 24px;
+}
+
+p {
+  margin: 0 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.navbar {
+  height: 70px;
+  background-color: rgb(200, 200, 255);
+}
+
+.navbar .container ul {
+  list-style-type: none;
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+
+.navbar .container ul li {
+  margin-right: 20px;
+}
+
+.navbar .container ul li a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.navbar .container ul li a:hover {
+  text-decoration: underline;
+  color: blueviolet;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar .container .menu-icon {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar .container ul {
+    display: none;
+  }
+
+  .navbar .container .menu-icon {
+    display: block;
+  }
+}

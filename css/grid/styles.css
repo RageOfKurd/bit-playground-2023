@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  margin: 100px;
+}
+
+.cards {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "content content sidebar";
+  grid-template-rows: repeat(2, 400px);
+  grid-template-columns: [col-1-start] 1fr [col-1-end col-2-start] 1fr [col-2-end col-3-start] 1fr [col-3-end];
+  grid-gap: 1.5rem;
+}
+
+.card {
+  border: 2px #b8b7b7 solid;
+  border-radius: 1rem;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.card figure img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.content {
+  text-align: center;
+}
+
+.read-more {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #b8b7b7;
+  padding: 0.5rem;
+}
+
+.read-more a {
+  color: green;
+}
+
+.item1 {
+  /* grid-area: 2 / 3 / 3 / 4; */
+}
+
+.google {
+  grid-row-start: header;
+  grid-row-end: header;
+  grid-column-start: header;
+  grid-column-end: header;
+}
+
+.amazon {
+  grid-column: content;
+  grid-row: content;
+}
