@@ -1,0 +1,32 @@
+.card {
+  border: 2px #b8b7b7 solid;
+  border-radius: 1rem;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.card figure img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.content {
+  text-align: center;
+}
+
+.read-more {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #b8b7b7;
+  padding: 0.5rem;
+}
+
+.read-more a {
+  color: green;
+}

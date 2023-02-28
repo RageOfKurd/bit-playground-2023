@@ -3,6 +3,7 @@ import Background from "./components/background/Background";
 import Container from "./components/container/Container";
 
 import Navbar from "./components/navbar/Navbar";
+import Articles from "./pages/articles/Articles";
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
             Quas dolorem aliquam commodi ea?
           </p>
         </Background>
+
+        <Articles />
       </Container>
     </>
   );
