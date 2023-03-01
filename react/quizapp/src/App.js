@@ -1,7 +1,10 @@
 import { useState } from "react";
 import "./App.css";
 
+//https://the-trivia-api.com/api/questions/
+
 function App() {
+  console.log("hello");
   return (
     <div className="container">
       <div className="quiz-card">
