@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import logo from "../../assets/images/logo.svg";
 import Button from "../button/Button";
 import Container from "../container/Container";
@@ -8,6 +10,12 @@ function Navbar() {
     firstName: "Hama",
     lastName: "Saadwn",
     profile: `http://localhost3000${img}`,
+  };
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleClick = () => {
+    setIsLoggedIn(!isLoggedIn);
   };
 
   return (
@@ -30,11 +38,11 @@ function Navbar() {
             <a href="/about">About</a>
           </li>
           <li>
-            <Button text="Login" isLoggedIn={true} />
+            <Button
+              text={isLoggedIn ? "Logout" : "Login"}
+              handleClick={handleClick}
+            />
           </li>
-          {/* <li>
-            <Button text="Register" {...user} isLoggedIn={false} />
-          </li> */}
         </ul>
       </Container>
     </nav>

@@ -1,7 +1,11 @@
 import "./button.styles.css";
 
-function Button({ text, isLoggedIn }) {
-  return <>{!isLoggedIn && <button className="small-button">{text}</button>}</>;
+function Button({ text, handleClick }) {
+  return (
+    <button className="small-button" onClick={handleClick}>
+      {text}
+    </button>
+  );
 }
 
 export default Button;
