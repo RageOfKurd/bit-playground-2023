@@ -1,29 +1,78 @@
-import { useState } from "react";
+
+
 import "./App.css";
+import { useState, useEffect } from 'react'
+import Options from './components/Options'
 
-//https://the-trivia-api.com/api/questions/
 
-/*
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-*/
+
 
 function App() {
-  console.log("hello");
-  return (
-    <div className="container">
-      <div className="quiz-card">
-        <h1 className="question-number" id="question-number"></h1>
-        <h2 className="question" id="question"></h2>
-        <div id="answers" className="answers"></div>
-      </div>
-    </div>
-  );
-}
 
+  const [questions, setQuestions] = useState(); 
+  const [count, setCount] = useState(0); 
+  const [correctAnswers, setCorrectAnswers] = useState(0)
+  const [isFinished , setIsFinished] = useState(false)
+  
+  function fetchQuestions() {
+      fetch('https://the-trivia-api.com/api/questions/')
+      .then(response => response.json())
+      .then(data => setQuestions(data))
+    
+  }
+
+  function handleClick(answer) {
+
+    if (count === questions.length-1) {
+      setIsFinished(true)
+    }
+    
+    if (count <= questions.length-1 ) {
+      if (answer === questions[count].correctAnswer)
+    {
+      setCorrectAnswers((prevValue) => prevValue + 1)
+      console.log("correct",answer);
+      
+    }
+    else {
+      console.log("wrong", answer);
+    }
+    
+    setCount((count)=>count+1)
+    
+    } 
+    
+    
+  }
+
+
+
+useEffect(() => {
+
+  return ()=>{
+    fetchQuestions();
+
+  }
+}, [])
+
+
+  
+  if (!questions)
+  {
+    return <div>loading...</div>
+  }
+  else {
+    return (
+      <div className="container">
+        {isFinished && <div><h1>Welldone</h1> <p>you have {correctAnswers } correct answeres!</p></div>}
+        {!isFinished && <div className="quiz-card">
+          <h1 className="question-number" >{ count+1 }</h1>
+          <h2 className="question" >{ questions[count].question}</h2>
+          <Options handleClick={handleClick} options={questions[count].incorrectAnswers.concat(questions[count].correctAnswer)} />
+        </div>}
+      </div>
+    );
+  }
+  
+}
 export default App;
